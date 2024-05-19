@@ -464,25 +464,17 @@ if __name__ == "__main__":
 
     # (2)测试模型示例：
     # 由于train时会将loss和acc保存下来，故load模型可plot
-    # workflow(load_model=True,
-    #          load_path="./model/0512221405/model.pickle",
-    #          train_net=False,
-    #          plot=True,
-    #          showfig=True)
+    workflow(load_model=True,
+             load_path="./bestmodel/model.pickle",
+             train_net=False,
+             plot=True,
+             showfig=True)
 
     # (3)参数查找：
     # 在训练模型部分即可指定各超参数
 
     # (4)权重参数可视化：
     # workflow(load_model=True,
-    #          load_path="./model/0512221405/model.pickle",
+    #          load_path="./bestmodel/model.pickle",
     #          train_net=False,
     #          weight_visualize=True)
-
-    for timecheck in os.listdir("./model/"):
-        print(timecheck)
-
-        net=workflow(load_model=True,load_path="./model/%s/model.pickle"%timecheck,
-                 train_net=False,weight_visualize=True)
-        print(net.get_settings())
-        print()
