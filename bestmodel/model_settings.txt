@@ -1,0 +1,5 @@
+layers=[Linear(*[784, 512]), Relu(), Linear(*[512, 256]), Relu(), Linear(*[256, 10])],
+epochs=50, batch_size=64,
+loss_cls=CrossEntropyloss,
+optimizer=SGD(l2_reg=1e-05, lrscheduler=LrScheduler),
+lrscheduler=LrScheduler(init_lr=0.1, decay_rate=0.9, strategy="exp",**args={}
